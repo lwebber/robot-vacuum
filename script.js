@@ -45,8 +45,8 @@ function start() {
     //check cardinal direction against current location
     //if ok to move, update current location
     //check for dirt
-    function updateLocation(direction, x, y) {
-        if (direction === 'N' && y < gridYLength) {
+    function updateLocation(direction) {
+        if (direction === 'N' && currentY < gridYLength) {
             currentY++;
             checkForDirt(currentX, currentY);
         } else if (direction === 'S' && currentY > 0) {
@@ -55,7 +55,7 @@ function start() {
         } else if (direction === 'E' && currentX < gridXLength) {
             currentX++;
             checkForDirt(currentX, currentY);
-        } else if (currentX > 0) {
+        } else if (direction === 'W' && currentX > 0) {
             currentX--;
             checkForDirt(currentX, currentY);
         }
