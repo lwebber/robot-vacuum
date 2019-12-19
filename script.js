@@ -10,6 +10,7 @@ function start() {
 
     handleStart();
 
+    //start button handler
     function handleStart() {
         $('button').on('click', function(event) {
             fetch('input.txt')
@@ -18,6 +19,7 @@ function start() {
         })
     }
 
+    //parse input.txt
     function parseInput(text) {
         let result = text.split('\n');
         gridXLength = parseInt(result[0][0]);
@@ -31,6 +33,8 @@ function start() {
         runDirections(directions);
     }
 
+    //run through the array of cardinal directions to update location
+    //output results when loop is finished
     function runDirections(directions) {
         for (let i = 0; i < directions.length; i++) {
             updateLocation(directions[i], currentX, currentY);
@@ -38,6 +42,9 @@ function start() {
         outputResults();
     }
 
+    //check cardinal direction against current location
+    //if ok to move, update current location
+    //check for dirt
     function updateLocation(direction, x, y) {
         if (direction === 'N' && y < gridYLength) {
             currentY++;
@@ -54,6 +61,8 @@ function start() {
         }
     }
 
+    //check if current location has a dirt patch
+    //if it does, clean it - store into array of clean dirt patches
     function checkForDirt(currentX, currentY) {
         for (let i = 0; i < dirtPatches.length; i++) {
             if (currentX === parseInt(dirtPatches[i][0]) && currentY === parseInt(dirtPatches[i][2])) {
@@ -63,6 +72,9 @@ function start() {
         }
     }
 
+    //make sure the list of cleaned dirt patches doesn't have any duplicates
+    //output to the console the final location & number of patches cleaned
+    //also output to the DOM
     function outputResults() {
         let finalCleanPatches = _.uniqWith(cleanDirtPatches, _.isEqual);
         console.log(`${currentX} ${currentY}`);
