@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+h1 {
+    font-size: 36px;
+    display: block;
+    margin-left: 20px;
+}
+
+button {
+    min-width: 100px;
+    font-size: 28px;
+    background-color: olive;
+    color: white;
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+
+button:hover {
+    background-color: lightgrey;
+}
+
+div {
+    font-size: 22px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
