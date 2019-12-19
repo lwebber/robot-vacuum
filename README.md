@@ -2,7 +2,7 @@
 JS with simple UI to process robot vacuum instructions provided in input.txt file
 
 ## Instructions for Running This Program
-Fork the repository to your computer and open the index.html file through your IDE's 'live server'. Press 'start' to execute the program; results will be outputted to the DOM and to the console (use devtools to view console output).
+Clone the repository to your computer and open the index.html file through your IDE's 'live server'. Press 'start' to execute the program; results will be outputted to the DOM and to the console (use devtools to view console output).
 Replace 'input.txt' to test additional data-- keep 'input.txt' in the same folder.
 
 ## Introduction
